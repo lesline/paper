@@ -10,6 +10,7 @@ import java.util.Random;
  */
 public class LeaderElection {
 
+    //虚拟节点集合
     List<VirtualNote> virtualNotes = new ArrayList<VirtualNote>();
 
     /**

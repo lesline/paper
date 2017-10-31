@@ -55,15 +55,19 @@ public class ConsistentHashGenerator<T> {
         return circle.get(hash);
     }
 
+    public long getHash(Object key) {
+        long hash = hashFunction.hash((String) key);// node 用String来表示,获得node在哈希环中的hashCode
+        return hash;
+    }
+
     public long getSize() {
         return circle.size();
     }
 
-
     /*
-     * 查看MD5算法生成的hashCode值
-     * hashCode值表示整个哈希环中各个虚拟节点位置
-     */
+         * 查看MD5算法生成的hashCode值
+         * hashCode值表示整个哈希环中各个虚拟节点位置
+         */
     public void testBalance() {
         Set<Long> sets = circle.keySet();//获得TreeMap中所有的Key
         SortedSet<Long> sortedSets = new TreeSet<Long>(sets);//将获得的Key集合排序
@@ -86,34 +90,5 @@ public class ConsistentHashGenerator<T> {
         }
     }
 
-    public static void main(String[] args) {
-        Set<String> nodes = new HashSet<String>();
-        nodes.add("106.38.115.111");
-        nodes.add("106.38.115.2");
-        nodes.add("106.38.115.211");
-        ConsistentHashGenerator<String> consistentHash = new ConsistentHashGenerator<String>(new HashFunction(), 2, nodes);
-        System.out.println("节点信息： " + consistentHash.getCircle());
-        consistentHash.testBalance();
-
-        System.out.println(consistentHash.get("/root/app/lock"));
-        System.out.println(consistentHash.get("/root/app/dataConfig"));
-    }
-
-
-    /**
-     * 查看hash一致性
-     */
-    public static void testConsistent() {
-
-        Set<String> nodes = new HashSet<String>();
-        nodes.add("106.38.115.1");
-        nodes.add("106.38.115.2");
-        nodes.add("106.38.115.3");
-
-        ConsistentHashGenerator<String> consistentHash = new ConsistentHashGenerator<String>(new HashFunction(), 2, nodes);
-        System.out.println("新增节点前： " + consistentHash.getCircle());
-        consistentHash.add("106.38.115.4");
-        System.out.println("新增节点后： " + consistentHash.getCircle());
-    }
 
 }
