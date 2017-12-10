@@ -1,6 +1,7 @@
 package leader;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -64,10 +65,30 @@ public class LeaderElection {
         noteList.add(new Note(1, 1));
         noteList.add(new Note(2, 2));
         noteList.add(new Note(3, 4));
-        noteList.add(new Note(12, 100));
+        noteList.add(new Note(4, 4));
+        noteList.add(new Note(5, 4));
+        noteList.add(new Note(6, 4));
+        noteList.add(new Note(7, 4));
+        noteList.add(new Note(8, 4));
+        noteList.add(new Note(9, 4));
+        noteList.add(new Note(10, 4));
+        noteList.add(new Note(11, 4));
+        noteList.add(new Note(12, 4));
+        noteList.add(new Note(13, 4));
+
+        for (int i = 14; i < 1000; i++) {
+            noteList.add(new Note(i, i));
+        }
         LeaderElection leaderElection = new LeaderElection();
         leaderElection.init(noteList);
         System.out.println("所有虚拟节点：" + leaderElection.getVirtualNotes());
-        System.out.println("随机选主节点为：" + leaderElection.getLeaderNote());
+        Long start=System.currentTimeMillis();
+        for (int i = 0; i <100 ; i++) {
+            System.out.println("随机选主节点为：" + leaderElection.getLeaderNote());
+
+        }
+        Long end=System.currentTimeMillis();
+        System.out.println(end-start);
+
     }
 }

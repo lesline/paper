@@ -24,7 +24,7 @@ public class ConsistentHashGenerator<T> {
             add(node);
     }
 
-    public void add(T node) {
+    public synchronized void add(T node) {
         //对于一个实际机器节点 node, 对应 numberOfReplicas 个虚拟节点
         for (int i = 0; i < numberOfReplicas; i++)
             /*
