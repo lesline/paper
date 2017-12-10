@@ -33,7 +33,7 @@ public class HashGeneratorTest {
         System.out.println(consistentHash.getHash("/root/app/dataConfig"));
         Long start=System.currentTimeMillis();
 
-        for (int i = 1; i < 1000; i++) {
+        for (int i = 1; i < 200; i++) {
             consistentHash.add("106.38.115.4");
           //  consistentHash.get("/root/app/lock"+i);
             consistentHash.get("/root/app/dataConfig"+i);

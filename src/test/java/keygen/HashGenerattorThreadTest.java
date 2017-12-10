@@ -11,10 +11,11 @@ public class HashGenerattorThreadTest {
     public static void main(String[] args) throws Exception {
 
         System.out.println("---------------------------start--------------------------");
+
+        MutiTaskServcie mutiTaskServcie = MutiTaskServcie.getInstance("3333",5);
         Long start = System.currentTimeMillis();
 
-        MutiTaskServcie mutiTaskServcie = MutiTaskServcie.getInstance("3333");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
             mutiTaskServcie.add(new MutiTask() {
                 public void exec() {
                     try {
