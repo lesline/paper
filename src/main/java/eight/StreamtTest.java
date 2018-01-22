@@ -2,6 +2,7 @@ package eight;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class StreamtTest {
     public static void main(String[] args) {
@@ -51,6 +52,28 @@ public class StreamtTest {
                         .noneMatch((s) -> s.startsWith("z"));
 
         System.out.println(noneStartsWithZ);      // true
+
+
+
+        long startsWithB =
+                stringCollection
+                        .stream()
+                        .filter((s) -> s.startsWith("b"))
+                        .count();
+
+        System.out.println(startsWithB);    // 3
+
+
+        Optional<String> reduced =
+                stringCollection
+                        .stream()
+                        .sorted()
+                        .reduce((s1, s2) -> s1 + "#" + s2);
+
+        reduced.ifPresent(System.out::println);
+
+
+
 
     }
 }
