@@ -13,6 +13,7 @@ public class StreamtTest {
         stringCollection.add("aaa1");
         stringCollection.add("bbb3");
         stringCollection.add("ccc");
+
         stringCollection.add("bbb2");
         stringCollection.add("ddd1");
 
@@ -23,13 +24,11 @@ public class StreamtTest {
                 .forEach(System.out::println);
 
 
-
         stringCollection
                 .stream()
                 .map(String::toUpperCase)
                 .sorted((a, b) -> b.compareTo(a))
                 .forEach(System.out::println);
-
 
 
         boolean anyStartsWithA =
@@ -54,7 +53,6 @@ public class StreamtTest {
         System.out.println(noneStartsWithZ);      // true
 
 
-
         long startsWithB =
                 stringCollection
                         .stream()
@@ -71,8 +69,6 @@ public class StreamtTest {
                         .reduce((s1, s2) -> s1 + "#" + s2);
 
         reduced.ifPresent(System.out::println);
-
-
 
 
     }
