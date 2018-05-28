@@ -1,4 +1,4 @@
-package rx;
+package reactor;
 
 import reactor.core.publisher.Flux;
 
@@ -41,5 +41,23 @@ public class WindowTest {
                 .flatMap(x -> Flux.intervalMillis(x * 10, 100).take(x))
                 .toStream()
                 .forEach(System.out::println);
+
+
+        System.out.println("-----------------1-----------------");
+        Flux.just(5, 10)
+                .flatMapSequential(x -> Flux.intervalMillis(x * 10, 100).take(x))
+                .toStream()
+                .forEach(System.out::println);
+
+
+        System.out.println("-----------------concatMap-----------------");
+
+        Flux.just(5, 10).concatMap(x -> Flux.intervalMillis(x * 10, 100).take(x))
+                .toStream()
+                .forEach(System.out::println);
+
+
+
     }
+
 }

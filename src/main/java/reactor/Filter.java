@@ -1,4 +1,4 @@
-package rx;
+package reactor;
 
 import reactor.core.publisher.Flux;
 

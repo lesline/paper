@@ -1,4 +1,4 @@
-package rx;
+package reactor;
 
 import io.reactivex.Flowable;
 import reactor.core.publisher.Flux;
