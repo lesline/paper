@@ -17,7 +17,7 @@ public class FluxTest2 {
         Flux.range(1, 10).subscribe(System.out::println);
         System.out.println("------------------start--------------");
         Flux.interval(Duration.of(10, ChronoUnit.SECONDS)).subscribe(System.out::println);
-        Flux.intervalMillis(1000).subscribe(System.out::println);
+//        Flux.intervalMillis(1000).subscribe(System.out::println);
         Thread.sleep(5000);
 
         System.out.println("------------------end----------------");

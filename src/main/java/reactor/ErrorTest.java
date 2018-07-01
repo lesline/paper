@@ -22,7 +22,7 @@ public class ErrorTest {
                 .subscribe(System.out::println);
 
 
-        System.out.println("----------------------------switchOnError------------------------------");
+      /*  System.out.println("----------------------------switchOnError------------------------------");
 
         Flux.just(1, 2)
                 .concatWith(Mono.error(new IllegalStateException()))
@@ -44,7 +44,7 @@ public class ErrorTest {
                 })
                 .subscribe(System.out::println);
 
-        System.out.println("----------------------------retry------------------------------");
+        System.out.println("----------------------------retry------------------------------");*/
 
         Flux.just(1, 2)
                 .concatWith(Mono.error(new IllegalStateException()))

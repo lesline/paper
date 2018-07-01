@@ -8,7 +8,7 @@ import reactor.core.publisher.Flux;
  */
 public class WindowTest {
     public static void main(String[] args) {
-        System.out.println("--------------window---------------");
+       /* System.out.println("--------------window---------------");
         Flux.range(1, 100).window(20).subscribe(System.out::println);
         System.out.println("-----------1-----------");
         Flux.intervalMillis(100).windowMillis(1001).take(2).toStream().forEach(System.out::println);
@@ -54,7 +54,7 @@ public class WindowTest {
 
         Flux.just(5, 10).concatMap(x -> Flux.intervalMillis(x * 10, 100).take(x))
                 .toStream()
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
 
 
 

@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class MapTest {
     public static void main(String[] args) {
-        Flux.just(5, 10)
+   /*     Flux.just(5, 10)
                 .concatMap(x -> Flux.intervalMillis(x * 10, 100).take(x))
                 .toStream()
                 .forEach(System.out::println);
@@ -21,6 +21,6 @@ public class MapTest {
                 Arrays::toString,
                 Flux.intervalMillis(100).take(5),
                 Flux.intervalMillis(50, 100).take(5)
-        ).toStream().forEach(System.out::println);
+        ).toStream().forEach(System.out::println);*/
     }
 }
