@@ -15,6 +15,10 @@ public class PersonTest {
             this.lastName = lastName;
         }
 
+       public void test() {
+
+       }
+
        @Override
        public String toString() {
            return firstName+" "+lastName;

@@ -30,7 +30,7 @@ public class MonoHttp3 {
 
         Thread.sleep(1000);
 
-        Mono.zip(item1Mono, item2Mono).map(tuple -> {
+         Mono.zip(item1Mono, item2Mono).map(tuple -> {
             System.out.println("----------------4--------------------");
             String item1 = tuple.getT1();
             String item2 = tuple.getT2();

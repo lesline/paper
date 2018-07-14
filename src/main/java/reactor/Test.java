@@ -1,7 +1,10 @@
 package reactor;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
+
+import java.time.Duration;
 
 /**
  * @author zhangshaolin
@@ -19,10 +22,11 @@ public class Test {
 //        System.out.println("--------");
 
 
+        Flux flux=  Flux.interval(Duration.ofMillis(200));
+        flux.subscribe(System.out::println);
 
-        Integer i=new Integer(6);
-        Integer t=new Integer(6);
-        System.out.println(i.equals(ExplorationResult.NOT_NEED_REPAIR.value().intValue()));
+
+
 
     }
 }
