@@ -3,11 +3,23 @@ package reactor;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author zhangshaolin
  * @create 2018/5/28
  */
 public class SchedulerTest {
+
+
+    private String getStringSync() {
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "Hello, Reactor!";
+    }
     public static void main(String[] args) {
         Flux.create(sink -> {
             sink.next("【-" + Thread.currentThread().getName() + "-】");
