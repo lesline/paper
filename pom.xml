@@ -14,7 +14,7 @@
         <module.war.name>paper</module.war.name>
         <module.version>1.0-SNAPSHOT</module.version>
         <!--实现性-->
-        <fastjson.version>1.2.6</fastjson.version>
+        <fastjson.version>1.2.25</fastjson.version>
         <guava.version>18.0</guava.version>
         <commons-lang-version>2.6</commons-lang-version>
         <junit-version>4.11</junit-version>
